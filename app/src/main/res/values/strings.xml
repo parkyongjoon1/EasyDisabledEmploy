@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Easy장애인고용</string>
+    <string name="title">장애인고용 부담금 간단계산기</string>
+    <string name="setting">설정</string>
+    <string name="save">저장</string>
+    <string name="load">열기</string>
+    <string name="delete">삭제</string>
+</resources>
