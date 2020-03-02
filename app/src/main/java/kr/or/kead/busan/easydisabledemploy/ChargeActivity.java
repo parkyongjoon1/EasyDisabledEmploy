@@ -422,7 +422,7 @@ public class ChargeActivity extends AppCompatActivity {
         AlertDialog.Builder aDialog = new AlertDialog.Builder(ChargeActivity.this);//여기서buttontest는 패키지이름
         aDialog.setTitle("설정값을 입력하세요");
         final CharSequence[] items = new String[1];
-        items[0]="현재 최저임금 값 : "+ makeStringComma(formatD(getMINUMUMWAGE())) +" 원" + "       현재 기초액 값 : "+ makeStringComma(formatD(getBASISAMOUNT())) +" 원";
+        items[0]="현재 최저임금 값 : "+ makeStringComma(formatD(getMINUMUMWAGE())) +" 원" + "\n현재 부담기초액 값 : "+ makeStringComma(formatD(getBASISAMOUNT())) +" 원";
         aDialog.setItems(items, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int item) {
             }
