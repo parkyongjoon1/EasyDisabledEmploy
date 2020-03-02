@@ -1,4 +1,4 @@
-package kr.or.kead.busan.easydisabledemploy;
+package sonar2.tistory.com.busan.easydisabledemploy;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,6 +34,8 @@ import java.io.FileWriter;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.text.DecimalFormat;
+
+import pl.polidea.view.ZoomView;
 
 
 /**
@@ -511,7 +514,26 @@ public class ChargeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_charge);
+        setContentView(R.layout.activity_charge_main);
+
+
+
+
+        View v = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.activity_charge, null, false);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+
+        ZoomView zoomView = new ZoomView(this);
+        zoomView.addView(v);
+        zoomView.setLayoutParams(layoutParams);
+        zoomView.setMiniMapEnabled(false); // 좌측 상단 검은색 미니맵 설정
+        zoomView.setMaxZoom(4f); // 줌 Max 배율 설정  1f 로 설정하면 줌 안됩니다.
+        //zoomView.setMiniMapCaption("Mini Map Test"); //미니 맵 내용
+        //zoomView.setMiniMapCaptionSize(20); // 미니 맵 내용 글씨 크기 설정
+
+        LinearLayout container = findViewById(R.id.container);
+        container.addView(zoomView);
+
+
 
         getConfig();  // 설정파일 불러오기
 

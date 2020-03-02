@@ -1,4 +1,4 @@
-package kr.or.kead.busan.easydisabledemploy;
+package sonar2.tistory.com.busan.easydisabledemploy;
 
 import android.os.Bundle;
 import android.view.View;

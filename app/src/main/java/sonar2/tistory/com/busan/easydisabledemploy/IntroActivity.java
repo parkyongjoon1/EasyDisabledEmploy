@@ -1,4 +1,4 @@
-package kr.or.kead.busan.easydisabledemploy;
+package sonar2.tistory.com.busan.easydisabledemploy;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
