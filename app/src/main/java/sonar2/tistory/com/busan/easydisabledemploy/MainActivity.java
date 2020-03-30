@@ -50,13 +50,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickIntro(View view){
-        Intent intent = new Intent(this, IntroActivity.class);
+        Intent intent = new Intent(this, KeadActivity.class);
         startActivity(intent);
 
     }
 
     public void onClickKeadintro(View view){
-        Intent intent = new Intent(this, KeadIntroActivity.class);
+        Intent intent = new Intent(this, Busan1Activity.class);
         startActivity(intent);
 
     }

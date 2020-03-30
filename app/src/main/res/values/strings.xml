@@ -5,4 +5,20 @@
     <string name="save">저장</string>
     <string name="load">열기</string>
     <string name="delete">삭제</string>
+    <string name="keadintro">한국장애인고용공단 장애인이 직업생활을 통해 자립할 수 있도록 지원하고 사업주의 장애인 고용을 전문적으로 지원하기 위하여 공단을 설립 장애인고용촉진 및 직업재활법 제43조</string>
+    <string name="viewVideo1">한국장애인고용공단 공식블로그</string>
+    <string name="viewVideo2">직장내 장애인 인식개선교육 영상</string>
+    <string name="busan1">부산직업능력개발원 http://campus.kead.or.kr/busan </string>
+    <string name="busan2">교육훈련 주요내용 </string>
+    <string name="busan3">산학연계훈련 </string>
+    <string name="busan4">훈련사례1 게임산업 </string>
+    <string name="busan5">훈련사례2 재택근무</string>
+    <string name="busan6">훈련사례3 대기업</string>
+    <string name="busan7">훈련사례4 의료기관</string>
+    <string name="busan8">훈련사례5 대학기관</string>
+    <string name="busan9">훈련사례6 공공기관</string>
+    <string name="busanPhoto">부산직능원 전경 사진</string>
+    <string name="busanMap">부산직능원 위치 지도</string>
+    <string name="nextPage">다음페이지</string>
+    <string name="set">설정</string>
 </resources>

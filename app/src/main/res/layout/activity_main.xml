@@ -1,69 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/clip_main_background"
+    android:orientation="horizontal"
+    android:weightSum="1.0">
+
+    <View
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:background="@drawable/background"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-
-
-
+        android:layout_weight="0.1" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:layout_weight="0.45"
         android:orientation="vertical"
-        android:weightSum="6"
-        android:layout_weight="1"
         >
 
-        <LinearLayout
+        <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_weight="3" />
+            android:layout_weight="0.48"
+            android:orientation="vertical"
+            tools:ignore="NestedWeights" />
 
-
-
-        <Button
+        <ImageButton
             android:id="@+id/btn_charge"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_weight="1"
-            android:onClick="onClickCharge"
-            android:background="@drawable/btn_charge" />
+            android:layout_weight="0.10"
+            android:background="@drawable/button_main1"
+            android:onClick="onClickCharge" />
 
-        <Button
+        <ImageButton
             android:id="@+id/btn_introduce"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_weight="1"
-            android:onClick="onClickIntro"
-            android:background="@drawable/btn_intro" />
+            android:layout_weight="0.10"
+            android:background="@drawable/button_main2"
+            android:onClick="onClickIntro" />
 
-        <Button
+        <View
             android:id="@+id/btn_keadintro"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_weight="1"
-            android:onClick="onClickKeadintro"
-            android:background="@drawable/btn_keadintro" />
+            android:layout_weight="0.10"
+            android:background="@drawable/button_main3"
+            android:onClick="onClickKeadintro" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.18"
+            android:orientation="vertical" />
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <View
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_weight="1"
-        >
-    </LinearLayout>
+        android:layout_weight="0.45" />
 
 </LinearLayout>
