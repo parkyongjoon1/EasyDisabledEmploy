@@ -1,66 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/clip_main_background"
-    android:orientation="horizontal"
-    android:weightSum="1.0">
+    tools:context=".MainActivity">
 
-    <View
-        android:layout_width="0dp"
+    <ImageView
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="0.1" />
+        android:background="@drawable/clip_main_background"
+        android:contentDescription="@string/maintitle" />
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="0.45"
-        android:orientation="vertical"
-        >
+    <ImageView
+        android:id="@+id/btn_charge"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:background="@drawable/button_main1"
+        android:contentDescription="@string/mainbutton1"
+        android:onClick="onClickCharge"
+        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintVertical_bias="0.69"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintBottom_toTopOf="@id/btn_introduce"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.48"
-            android:orientation="vertical"
-            tools:ignore="NestedWeights" />
+    <ImageView
+        android:id="@+id/btn_introduce"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:background="@drawable/button_main2"
+        android:contentDescription="@string/mainbutton2"
+        android:onClick="onClickIntro"
+        app:layout_constraintBottom_toTopOf="@id/btn_keadintro"
+        app:layout_constraintStart_toStartOf="@+id/btn_charge"
+        app:layout_constraintTop_toBottomOf="@+id/btn_charge" />
 
-        <ImageButton
-            android:id="@+id/btn_charge"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.10"
-            android:background="@drawable/button_main1"
-            android:onClick="onClickCharge" />
+    <ImageView
+        android:id="@+id/btn_keadintro"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:background="@drawable/button_main3"
+        android:contentDescription="@string/mainbutton3"
+        android:onClick="onClickKeadintro"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btn_introduce"
+        app:layout_constraintTop_toBottomOf="@+id/btn_introduce" />
 
-        <ImageButton
-            android:id="@+id/btn_introduce"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.10"
-            android:background="@drawable/button_main2"
-            android:onClick="onClickIntro" />
-
-        <View
-            android:id="@+id/btn_keadintro"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.10"
-            android:background="@drawable/button_main3"
-            android:onClick="onClickKeadintro" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.18"
-            android:orientation="vertical" />
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="0.45" />
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

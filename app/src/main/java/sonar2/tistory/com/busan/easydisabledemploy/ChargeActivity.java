@@ -3,7 +3,6 @@ package sonar2.tistory.com.busan.easydisabledemploy;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -534,6 +533,19 @@ public class ChargeActivity extends AppCompatActivity {
         LinearLayout container = findViewById(R.id.container);
         container.addView(zoomView);
 
+        //스와이프 구현
+        v.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
+            @Override
+            public void onSwipeRight() {
+                finish();
+                overridePendingTransition(R.anim.slide_enter, R.anim.slide_exit);
+            }
+            public void onSwipeLeft() {
+                Toast.makeText(getApplicationContext(),"마지막 페이지 입니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
 
         getConfig();  // 설정파일 불러오기
 
@@ -926,7 +938,7 @@ public class ChargeActivity extends AppCompatActivity {
             }
         });
 
-    }
+    }  //End of Oncreate
 
     public void calculate() {
 
@@ -1254,22 +1266,21 @@ public class ChargeActivity extends AppCompatActivity {
                 //new DataPoint(4, string2long(tmp_resultd8)),
                 //new DataPoint(5, string2long(tmp_resulte8))
         });
-        series.setSpacing(50);
+        series.setSpacing(35);
         series.setDrawValuesOnTop(true);
-        series.setValuesOnTopColor(Color.BLACK);
+        series.setValuesOnTopColor(0xFF0054A6);
         series.setValuesOnTopSize(28);
 
         graph.removeAllSeries();
         graph.addSeries(series);
         graph.getViewport().setXAxisBoundsManual(true);
-        graph.getViewport().setMinX(0.0);
-        graph.getViewport().setMaxX(4.0);
+        graph.getViewport().setMinX(0.3);
+        graph.getViewport().setMaxX(3.7);
         graph.getGridLabelRenderer().setHorizontalLabelsVisible(false);
-        graph.getGridLabelRenderer().setGridColor(0xFF0000FF);
-        graph.getGridLabelRenderer().setVerticalLabelsColor(0xFF0000FF);
-
-
-
+        graph.getGridLabelRenderer().setGridColor(0xFF8FB9C9);
+        graph.getGridLabelRenderer().setVerticalLabelsColor(0xFF8FB9C9);
+        graph.getViewport().setScalable(false);
+        graph.getViewport().setScrollable(false);
 
     } ///End of Calculate/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

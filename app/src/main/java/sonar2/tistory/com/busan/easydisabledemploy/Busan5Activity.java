@@ -20,7 +20,7 @@ public class Busan5Activity extends AppCompatActivity {
         setContentView(R.layout.activity_busan5);
 
         //화면확대
-        View v = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.activity_busan5, null, false);
+        final View v = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.activity_busan5, null, false);
         ConstraintLayout.LayoutParams layoutParams = new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         ZoomView zoomView = new ZoomView(this);
         zoomView.addView(v);
@@ -29,14 +29,36 @@ public class Busan5Activity extends AppCompatActivity {
         zoomView.setMaxZoom(4f); // 줌 Max 배율 설정  1f 로 설정하면 줌 안됩니다.
         ConstraintLayout container = findViewById(R.id.container);
         container.addView(zoomView);
+
+        //스와이프 구현
+        v.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
+            @Override
+            public void onSwipeRight() {
+                onCLickPrev(v);
+            }
+            public void onSwipeLeft() {
+                onCLickNext(v);
+            }
+        });
     }
 
     public void onCLickPrev(View view) {
         finish();
+        overridePendingTransition(R.anim.slide_enter, R.anim.slide_exit);
     }
 
     public void onCLickNext(View view) {
-        Intent intent = new Intent(this, Busan6Activity.class);
-        startActivity(intent);
+        Intent intent = new Intent(getApplicationContext(), Busan6Activity.class);
+        startActivityForResult(intent,0);
+        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == 2) {
+            setResult(2);
+            finish();
+        }
     }
 }
