@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/clip_main_background"
@@ -19,7 +20,7 @@
         android:layout_height="@dimen/_25sdp"
         android:background="@drawable/button_main1"
         android:contentDescription="@string/mainbutton1"
-        android:onClick="onClickCharge"
+        android:onClick="onClickChargeGrant"
         app:layout_constraintHorizontal_bias="0.17"
         app:layout_constraintVertical_bias="0.69"
         app:layout_constraintVertical_chainStyle="packed"
@@ -49,5 +50,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/btn_introduce"
         app:layout_constraintTop_toBottomOf="@+id/btn_introduce" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="테스트 버전 입니다."
+        android:padding="@dimen/_10sdp"
+        android:textColor="#f00"
+        android:textSize="@dimen/_20sdp"
+        android:background="@drawable/border_red"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.857"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -121,9 +121,10 @@
     <string name="busanPhoto">부산직능원 전경 사진</string>
     <string name="busanMap">부산직능원 위치 지도</string>
     <string name="nextPage">다음페이지</string>
-    <string name="mainbutton1">부담금 미리보기</string>
+    <string name="mainbutton1">부담금/장려금 미리보기</string>
     <string name="mainbutton2">한국장애인고용공단 소개</string>
     <string name="mainbutton3">장애인 직업능력개발훈련 사업 소개</string>
     <string name="maintitle">easy장애인고용</string>
     <string name="chargetitle">장애인고용 부담금 간단계산기</string>
+    <string name="granttitle">장애인고용 장려금 간단계산기</string>
 </resources>

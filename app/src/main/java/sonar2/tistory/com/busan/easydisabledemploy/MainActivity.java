@@ -1,8 +1,6 @@
 package sonar2.tistory.com.busan.easydisabledemploy;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -46,38 +44,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void onClickCharge(View view){
-        AlertDialog.Builder ad = new AlertDialog.Builder(this);
-        ad.setTitle("*****주의 사항*****");       // 제목 설정
-        ad.setMessage("장애인 고용 부담금 간단 계산기는 개인이 만든 어플리케이션으로 결과값은 법적 효력이 없으며, 데이터 사용에 따른 책임은 사용자에게 있음을 알려드립니다.\n동의 하시면 확인을 선택하세요.");   // 내용 설정
-        // 확인 버튼 설정
-        ad.setPositiveButton("확인", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();     //닫기
-                Intent intent = new Intent(MainActivity.this, ChargeActivity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
-            }
-        });
-//       // 중립 버튼 설정
-//        ad.setNeutralButton("What?", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialog, int which) {
-//                dialog.dismiss();     //닫기
-//                // Event
-//            }
-//        });
-        // 취소 버튼 설정
-//        ad.setNegativeButton("취소", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialog, int which) {
-//                dialog.dismiss();     //닫기
-//                // Event
-//            }
-//        });
-        // 창 띄우기
-        ad.show();
+    public void onClickChargeGrant(View view){
+        Intent intent = new Intent(MainActivity.this, ChargeGrant.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
     }
 
     public void onClickIntro(View view){

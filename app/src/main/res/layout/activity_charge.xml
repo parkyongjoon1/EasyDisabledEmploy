@@ -203,44 +203,44 @@
                 android:paddingBottom="1dp">
 
                 <EditText
-                    android:id="@+id/editText1"
+                    android:id="@+id/etR1C1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
                     android:imeOptions="flagNoExtractUi"
-                    android:nextFocusDown="@id/editText2"
+                    android:nextFocusDown="@id/etR1C5"
                     android:textColor="#004A8F"
                     android:textSize="@dimen/_9sdp" />
 
                 <EditText
-                    android:id="@+id/editText2"
+                    android:id="@+id/etR1C5"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
                     android:imeOptions="flagNoExtractUi"
-                    android:nextFocusDown="@id/editTextb2"
+                    android:nextFocusDown="@id/etR2C5"
                     android:textColor="#004A8F"
                     android:textSize="@dimen/_9sdp" />
 
                 <EditText
-                    android:id="@+id/editText3"
+                    android:id="@+id/etR1C6"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
                     android:imeOptions="flagNoExtractUi"
-                    android:nextFocusDown="@id/editTextb3"
+                    android:nextFocusDown="@id/etR2C6"
                     android:textColor="#004A8F"
                     android:textSize="@dimen/_9sdp" />
 
 
                 <Spinner
-                    android:id="@+id/rate_1"
+                    android:id="@+id/spnR1C2"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
@@ -264,7 +264,7 @@
 
                 <!--  의무고용인원  -->
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/tvR1C4"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
@@ -274,7 +274,7 @@
 
                 <!--  장애인고용율  -->
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/tvR1C3"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
@@ -294,7 +294,7 @@
                           android:textSize="@dimen/_9sdp" />-->
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/etR1C7"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
@@ -303,7 +303,7 @@
                     android:textSize="@dimen/_9sdp" />
 
                 <TextView
-                    android:id="@+id/textView9"
+                    android:id="@+id/etR1C8"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
@@ -312,7 +312,7 @@
                     android:textSize="@dimen/_9sdp" />
 
                 <TextView
-                    android:id="@+id/textView11"
+                    android:id="@+id/tvR1C9"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                    android:background="@drawable/style_right_vertical"
@@ -321,7 +321,7 @@
                     android:textSize="@dimen/_9sdp" />
 
                 <TextView
-                    android:id="@+id/textView12"
+                    android:id="@+id/tvR1C10"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
@@ -330,7 +330,7 @@
                     android:textSize="@dimen/_9sdp" />
 
                 <TextView
-                    android:id="@+id/textView13"
+                    android:id="@+id/tvR1C11"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal|center_vertical"
@@ -349,7 +349,7 @@
                 android:paddingBottom="1dp">
 
                 <EditText
-                    android:id="@+id/editTextb1"
+                    android:id="@+id/etR2C1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
@@ -360,7 +360,7 @@
                     android:textSize="@dimen/_9sdp" />
 
                 <EditText
-                    android:id="@+id/editTextb2"
+                    android:id="@+id/etR2C5"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
@@ -368,11 +368,11 @@
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
                     android:imeOptions="flagNoExtractUi"
-                    android:nextFocusDown="@id/editTextc2"
+                    android:nextFocusDown="@id/etR3C5"
                     android:textSize="@dimen/_9sdp" />
 
                 <EditText
-                    android:id="@+id/editTextb3"
+                    android:id="@+id/etR2C6"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
@@ -380,11 +380,11 @@
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
                     android:imeOptions="flagNoExtractUi"
-                    android:nextFocusDown="@id/editTextc3"
+                    android:nextFocusDown="@id/etR3C6"
                     android:textSize="@dimen/_9sdp" />
 
                 <Spinner
-                    android:id="@+id/rate_2"
+                    android:id="@+id/spnR2C2"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
@@ -406,7 +406,7 @@
                     android:gravity="center_horizontal|center_vertical"
                     />-->
                 <TextView
-                    android:id="@+id/textViewb5"
+                    android:id="@+id/tvR2C4"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
@@ -415,7 +415,7 @@
                     android:textSize="@dimen/_9sdp" />
 
                 <TextView
-                    android:id="@+id/textViewb6"
+                    android:id="@+id/tvR2C3"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
@@ -435,7 +435,7 @@
                           android:gravity="center_horizontal|center_vertical"
                           />-->
                 <TextView
-                    android:id="@+id/textViewb8"
+                    android:id="@+id/etR2C7"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
@@ -444,7 +444,7 @@
                     android:textSize="@dimen/_9sdp" />
 
                 <TextView
-                    android:id="@+id/textViewb9"
+                    android:id="@+id/etR2C8"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
@@ -453,7 +453,7 @@
                     android:textSize="@dimen/_9sdp" />
 
                 <TextView
-                    android:id="@+id/textViewb11"
+                    android:id="@+id/tvR2C9"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
@@ -462,7 +462,7 @@
                     android:textSize="@dimen/_9sdp" />
 
                 <TextView
-                    android:id="@+id/textViewb12"
+                    android:id="@+id/tvR2C10"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
@@ -471,7 +471,7 @@
                     android:textSize="@dimen/_9sdp" />
 
                 <TextView
-                    android:id="@+id/textViewb13"
+                    android:id="@+id/tvR2C11"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textColor="#004A8F"
@@ -490,31 +490,31 @@
                 android:paddingBottom="1dp">
 
                 <EditText
-                    android:id="@+id/editTextc1"
+                    android:id="@+id/etR3C1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
                     android:textColor="#004A8F"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
-                    android:imeOptions="flagNoExtractUi"
-                    android:nextFocusDown="@id/editTextc2"
+                    android:imeOptions="flagNoExtractUi|actionNext"
+                    android:nextFocusDown="@id/etR3C5"
                     android:textSize="@dimen/_9sdp" />
 
                 <EditText
-                    android:id="@+id/editTextc2"
+                    android:id="@+id/etR3C5"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
                     android:textColor="#004A8F"
                     android:gravity="center_horizontal|center_vertical"
                     android:inputType="number"
-                    android:imeOptions="flagNoExtractUi"
-                    android:nextFocusDown="@id/editTextc3"
+                    android:imeOptions="flagNoExtractUi|actionNext"
+                    android:nextFocusDown="@id/etR3C6"
                     android:textSize="@dimen/_9sdp" />
 
                 <EditText
-                    android:id="@+id/editTextc3"
+                    android:id="@+id/etR3C6"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
@@ -525,7 +525,7 @@
                     android:textSize="@dimen/_9sdp" />
 
                 <Spinner
-                    android:id="@+id/rate_3"
+                    android:id="@+id/spnR3C2"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
@@ -546,7 +546,7 @@
                     android:gravity="center_horizontal|center_vertical"
                     />-->
                 <TextView
-                    android:id="@+id/textViewc5"
+                    android:id="@+id/tvR3C4"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
@@ -555,7 +555,7 @@
                     android:textSize="@dimen/_9sdp" />
 
                 <TextView
-                    android:id="@+id/textViewc6"
+                    android:id="@+id/tvR3C3"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
@@ -575,7 +575,7 @@
                                  android:gravity="center_horizontal|center_vertical"
                                  />-->
                 <TextView
-                    android:id="@+id/textViewc8"
+                    android:id="@+id/etR3C7"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
@@ -584,7 +584,7 @@
                     android:textSize="@dimen/_9sdp" />
 
                 <TextView
-                    android:id="@+id/textViewc9"
+                    android:id="@+id/etR3C8"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
@@ -593,7 +593,7 @@
                     android:textSize="@dimen/_9sdp" />
 
                 <TextView
-                    android:id="@+id/textViewc11"
+                    android:id="@+id/tvR3C9"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
@@ -602,7 +602,7 @@
                     android:textSize="@dimen/_9sdp" />
 
                 <TextView
-                    android:id="@+id/textViewc12"
+                    android:id="@+id/tvR3C10"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_right_vertical"
@@ -611,7 +611,7 @@
                     android:textSize="@dimen/_9sdp" />
 
                 <TextView
-                    android:id="@+id/textViewc13"
+                    android:id="@+id/tvR3C11"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textColor="#004A8F"
