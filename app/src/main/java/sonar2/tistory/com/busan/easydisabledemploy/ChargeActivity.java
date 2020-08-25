@@ -122,7 +122,7 @@ public class ChargeActivity extends AppCompatActivity {
 
 
         try {
-            BufferedWriter bw = new BufferedWriter(new FileWriter(getFilesDir() + "/" + fileName + ".부담금", true));
+            BufferedWriter bw = new BufferedWriter(new FileWriter(getFilesDir() + "/" + fileName + ".부담금", false));
             //BufferedWriter bw = new BufferedWriter(new FileWriter(getFilesDir() + fileName+".txt", true));
             bw.write(EditTextedit1 + "/");
             bw.write(EditTextedit2 + "/");
@@ -141,7 +141,7 @@ public class ChargeActivity extends AppCompatActivity {
 
             bw.close();
 
-            Toast.makeText(this, "저장완료", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, fileName + " 저장완료!", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             e.printStackTrace();
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -278,8 +278,10 @@ public class ChargeActivity extends AppCompatActivity {
                 fileNames = items[item].toString();
                 try {
                     File f = new File(getFilesDir() + "/" + fileNames);
-                    f.delete();
-                    Toast.makeText(getApplicationContext(), fileNames + " 성공적으로 삭제되었습니다.", Toast.LENGTH_SHORT).show();
+                    if (f.delete())
+                        Toast.makeText(getApplicationContext(), fileNames + " 성공적으로 삭제되었습니다.", Toast.LENGTH_SHORT).show();
+                    else
+                        Toast.makeText(getApplicationContext(), fileNames + " 삭제 실패!!!", Toast.LENGTH_SHORT).show();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -677,8 +679,6 @@ public class ChargeActivity extends AppCompatActivity {
         String tmp_edit2 = edit2.getText().toString();  // 경증인원
         String tmp_edit3 = edit3.getText().toString();  // 중증인원
 
-        java.util.Calendar cal = java.util.Calendar.getInstance();
-
         if (tmp_edit1.equals("")) {
             tmp_edit1 = "0";
         }
@@ -713,13 +713,9 @@ public class ChargeActivity extends AppCompatActivity {
 
         String tmp_result7 = monthAmount(tmp_result4, tmp_result5);   // 월 부담금 ( 부담기초액, 미달인원 경증)
         String tmp_result8 = "";
-        if (tmp_result7.equals("장려금대상")) {
-
-        } else {
-            text11.setText(makeStringComma(tmp_result7));
-            tmp_result8 = yearAmount(tmp_result4, tmp_result5);
-            text12.setText(makeStringComma(tmp_result8));
-        }
+        text11.setText(makeStringComma(tmp_result7));
+        tmp_result8 = yearAmount(tmp_result4, tmp_result5);
+        text12.setText(makeStringComma(tmp_result8));
         text13.setText("-");  // 차액  맨 처음꺼는 비교 대상이 없으므로 -
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -765,17 +761,13 @@ public class ChargeActivity extends AppCompatActivity {
 
         String tmp_resultb7 = monthAmount(tmp_resultb4, tmp_resultb5);   // 월 부담금 ( 부담기초액, 미달인원 경증)
         String tmp_resultb8 = "";
-        if (tmp_resultb7.equals("장려금대상")) {
+        textb11.setText(makeStringComma(tmp_resultb7));   // 년 부담금 ( 부담기초액, 미달인원 경증)
+        tmp_resultb8 = yearAmount(tmp_resultb4, tmp_resultb5);
+        textb12.setText(makeStringComma(tmp_resultb8));
 
-        } else {
-            textb11.setText(makeStringComma(tmp_resultb7));   // 년 부담금 ( 부담기초액, 미달인원 경증)
-            tmp_resultb8 = yearAmount(tmp_resultb4, tmp_resultb5);
-            textb12.setText(makeStringComma(tmp_resultb8));
-
-            String tmp_resultb9 = diff_Amount(tmp_result8, tmp_resultb8);
-            if (tmp_editb1.equals("0")) textb13.setText("-");
-            textb13.setText(makeStringComma(tmp_resultb9));  // 차액
-        }
+        String tmp_resultb9 = diff_Amount(tmp_result8, tmp_resultb8);
+        if (tmp_editb1.equals("0")) textb13.setText("-");
+        textb13.setText(makeStringComma(tmp_resultb9));  // 차액
 
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -813,17 +805,13 @@ public class ChargeActivity extends AppCompatActivity {
 
         String tmp_resultc7 = monthAmount(tmp_resultc4, tmp_resultc5);   // 월 부담금 ( 부담기초액, 미달인원 경증)
         String tmp_resultc8 = "";
-        if (tmp_resultc7.equals("장려금대상")) {
+        textc11.setText(makeStringComma(tmp_resultc7));   // 년 부담금 ( 부담기초액, 미달인원 경증)
+        tmp_resultc8 = yearAmount(tmp_resultc4, tmp_resultc5);
+        textc12.setText(makeStringComma(tmp_resultc8));
 
-        } else {
-            textc11.setText(makeStringComma(tmp_resultc7));   // 년 부담금 ( 부담기초액, 미달인원 경증)
-            tmp_resultc8 = yearAmount(tmp_resultc4, tmp_resultc5);
-            textc12.setText(makeStringComma(tmp_resultc8));
-
-            String tmp_resultc9 = diff_Amount(tmp_result8, tmp_resultc8);
-            if (tmp_editc1.equals("0")) textc13.setText("-");
-            else textc13.setText(makeStringComma(tmp_resultc9));  // 차액
-        }
+        String tmp_resultc9 = diff_Amount(tmp_result8, tmp_resultc8);
+        if (tmp_editc1.equals("0")) textc13.setText("-");
+        else textc13.setText(makeStringComma(tmp_resultc9));  // 차액
 
         GraphView graph = findViewById(R.id.graph);
         BarGraphSeries<DataPoint> series = new BarGraphSeries<>(new DataPoint[]{
@@ -955,7 +943,7 @@ public class ChargeActivity extends AppCompatActivity {
 
 
     public String monthAmount(int dutyCnt, String underCnt) {  // 월 부담금(부담기초액, 미달인원 경증)
-        if (dutyCnt == 0 ||  underCnt.equals("0.0"))
+        if (dutyCnt == 0 || underCnt.equals("0.0"))
             return "0";
         double dblCnt = Double.parseDouble(underCnt);
         int int_underCnt = (int) dblCnt;
@@ -965,7 +953,7 @@ public class ChargeActivity extends AppCompatActivity {
     }
 
     public String yearAmount(int dutyCnt, String underCnt) {  // 년 부담금(부담기초액, 미달인원 경증)
-        if (dutyCnt == 0 ||  underCnt.equals("0.0"))
+        if (dutyCnt == 0 || underCnt.equals("0.0"))
             return "0";
         double dblCnt = Double.parseDouble(underCnt);
         long int_underCnt = (long) dblCnt;

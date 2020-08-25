@@ -106,7 +106,7 @@ public class Grant extends AppCompatActivity {
         String strC2 = Double.toString(dblC2);
 
         try {
-            BufferedWriter bw = new BufferedWriter(new FileWriter(getFilesDir() + "/" + fileName + ".장려금", true));
+            BufferedWriter bw = new BufferedWriter(new FileWriter(getFilesDir() + "/" + fileName + ".장려금", false));
             //BufferedWriter bw = new BufferedWriter(new FileWriter(getFilesDir() + fileName+".txt", true));
             bw.write(strA1 + "/");
             bw.write(strA2 + "/");
@@ -130,8 +130,7 @@ public class Grant extends AppCompatActivity {
             bw.write(strC8 + "/");
 
             bw.close();
-
-            Toast.makeText(this, "저장완료", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, fileName + " 저장완료!", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             e.printStackTrace();
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -278,8 +277,12 @@ public class Grant extends AppCompatActivity {
                 fileNames = items[item].toString();
                 try {
                     File f = new File(getFilesDir() + "/" + fileNames);
-                    f.delete();
-                    Toast.makeText(getApplicationContext(), fileNames + " 성공적으로 삭제되었습니다.", Toast.LENGTH_SHORT).show();
+                    if(f.delete()) {
+                        Toast.makeText(getApplicationContext(), fileNames + " 성공적으로 삭제되었습니다.", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(), fileNames + " 삭제 실패!!", Toast.LENGTH_SHORT).show();
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -376,7 +379,6 @@ public class Grant extends AppCompatActivity {
         spnA2.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView arg0, View view, int arg2, long arg3) {
-                // TODO Auto-generated method stub
                 String spinner_Rate_1_value = arg0.getItemAtPosition(arg2).toString();
                 spinner_Rate_1_value = spinner_Rate_1_value.substring(0, 3);
 
@@ -392,10 +394,8 @@ public class Grant extends AppCompatActivity {
         spnB2.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView arg0, View view, int arg2, long arg3) {
-                // TODO Auto-generated method stub
                 String spinner_Rate_2_value = arg0.getItemAtPosition(arg2).toString();
                 spinner_Rate_2_value = spinner_Rate_2_value.substring(0, 3);
-                //Toast.makeText(getBaseContext(), spinner_Rate_2_value,Toast.LENGTH_SHORT).show();
                 dblB2 = Double.parseDouble(spinner_Rate_2_value);
                 calculate();
             }
@@ -407,10 +407,8 @@ public class Grant extends AppCompatActivity {
         spnC2.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView arg0, View view, int arg2, long arg3) {
-                // TODO Auto-generated method stub
                 String spinner_Rate_3_value = arg0.getItemAtPosition(arg2).toString();
                 spinner_Rate_3_value = spinner_Rate_3_value.substring(0, 3);
-                //Toast.makeText(getBaseContext(), spinner_Rate_3_value,Toast.LENGTH_SHORT).show();
                 dblC2 = Double.parseDouble(spinner_Rate_3_value);
                 calculate();
             }
