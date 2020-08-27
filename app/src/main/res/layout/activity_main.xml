@@ -51,6 +51,7 @@
         app:layout_constraintStart_toStartOf="@+id/btn_introduce"
         app:layout_constraintTop_toBottomOf="@+id/btn_introduce" />
 
+    <!--
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -58,12 +59,13 @@
         android:text="테스트 버전 입니다."
         android:padding="@dimen/_10sdp"
         android:textColor="#f00"
-        android:textSize="@dimen/_20sdp"
+        android:textSize="@dimen/_10sdp"
         android:background="@drawable/border_red"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.857"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+        -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

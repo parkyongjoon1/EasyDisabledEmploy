@@ -2,33 +2,33 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/container"
     tools:context=".ChargeGrant">
 
     <Button
         android:id="@+id/btn_charge2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="부담금 미리보기"
+        android:layout_width="@dimen/_180sdp"
+        android:layout_height="@dimen/_92sdp"
+        android:background="@drawable/clip_btn_charge"
+        android:contentDescription="@string/preview_charge"
         android:onClick="onClickCharge2"
-        app:layout_constraintBottom_toTopOf="@+id/btn_grant2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_grant2"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_grant2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="장려금 미리보기"
+        android:layout_width="@dimen/_180sdp"
+        android:layout_height="@dimen/_92sdp"
+        android:background="@drawable/clip_btn_grant"
+        android:contentDescription="@string/preview_grant"
         android:onClick="onClickGrant2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintTop_toBottomOf="@id/btn_charge2"
-        app:layout_constraintStart_toStartOf="parent"
-         />
+        app:layout_constraintStart_toEndOf="@+id/btn_charge2"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

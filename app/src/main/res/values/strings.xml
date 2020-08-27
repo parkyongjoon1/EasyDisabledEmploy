@@ -127,4 +127,6 @@
     <string name="maintitle">easy장애인고용</string>
     <string name="chargetitle">장애인고용 부담금 간단계산기</string>
     <string name="granttitle">장애인고용 장려금 간단계산기</string>
+    <string name="preview_charge">부담금 미리보기</string>
+    <string name="preview_grant">장려금 미리보기</string>
 </resources>

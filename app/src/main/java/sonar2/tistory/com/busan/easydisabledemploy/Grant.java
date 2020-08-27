@@ -3,6 +3,7 @@ package sonar2.tistory.com.busan.easydisabledemploy;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.ValueDependentColor;
 import com.jjoe64.graphview.series.BarGraphSeries;
 import com.jjoe64.graphview.series.DataPoint;
 
@@ -277,10 +279,9 @@ public class Grant extends AppCompatActivity {
                 fileNames = items[item].toString();
                 try {
                     File f = new File(getFilesDir() + "/" + fileNames);
-                    if(f.delete()) {
+                    if (f.delete()) {
                         Toast.makeText(getApplicationContext(), fileNames + " 성공적으로 삭제되었습니다.", Toast.LENGTH_SHORT).show();
-                    }
-                    else {
+                    } else {
                         Toast.makeText(getApplicationContext(), fileNames + " 삭제 실패!!", Toast.LENGTH_SHORT).show();
                     }
                 } catch (Exception e) {
@@ -796,6 +797,13 @@ public class Grant extends AppCompatActivity {
         series.setDrawValuesOnTop(true);
         series.setValuesOnTopColor(0xFF0054A6);
         series.setValuesOnTopSize(28);
+        // styling
+        series.setValueDependentColor(new ValueDependentColor<DataPoint>() {
+            @Override
+            public int get(DataPoint data) {
+                return Color.rgb(0, 0, (int) (data.getX()*255/3));
+            }
+        });
 
         graph.removeAllSeries();
         graph.addSeries(series);
