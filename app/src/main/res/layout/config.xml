@@ -3,7 +3,7 @@
     android:id="@+id/layout_root" android:orientation="vertical"
     android:layout_width="fill_parent" android:layout_height="fill_parent"
     android:background="#004A8F"
-    android:padding="10dp">
+    android:padding="5dp">
 
     <TextView
         android:text="최저임금"

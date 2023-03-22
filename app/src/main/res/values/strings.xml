@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Easy 장애인고용</string>
+    <string name="minimumage">2010580</string>
+    <string name="basisamount">1207000</string>
     <string name="title">장애인고용 부담금 간단계산기</string>
     <string name="setting">설정</string>
     <string name="save">저장</string>

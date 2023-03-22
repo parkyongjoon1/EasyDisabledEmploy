@@ -39,8 +39,8 @@ import pl.polidea.view.ZoomView;
 
 public class ChargeActivity extends AppCompatActivity {
 
-    public double MINUMUMWAGE = 0;   // 최저임금 2020=1795310
-    public double BASISAMOUNT = 0;    // 기초액   2020=1078000
+    public double MINUMUMWAGE = 0;   // 최저임금 초기 설정값은 strings.xml에서 수정
+    public double BASISAMOUNT = 0;    // 기초액  초기 설정값은 strings.xml에서 수정
 
 
     public double getMINUMUMWAGE() {
@@ -303,7 +303,7 @@ public class ChargeActivity extends AppCompatActivity {
         AlertDialog.Builder aDialog = new AlertDialog.Builder(ChargeActivity.this);//
         aDialog.setTitle("설정값을 입력하세요");
         final CharSequence[] items = new String[1];
-        items[0] = "현재 최저임금 값 : " + makeStringComma(formatD(getMINUMUMWAGE())) + " 원" + "\n현재 부담기초액 값 : " + makeStringComma(formatD(getBASISAMOUNT())) + " 원";
+        items[0] = "설정된 최저임금 값 : " + makeStringComma(formatD(getMINUMUMWAGE())) + " 원" + "\n설정된 부담기초액 값 : " + makeStringComma(formatD(getBASISAMOUNT())) + " 원";
         aDialog.setItems(items, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int item) {
             }
@@ -311,8 +311,15 @@ public class ChargeActivity extends AppCompatActivity {
 
         aDialog.setView(layout);
 
-        if (MINUMUMWAGE == 0) ((EditText) layout.findViewById(R.id.minimumwage)).setText("1795310");
-        if (BASISAMOUNT == 0) ((EditText) layout.findViewById(R.id.basisamount)).setText("1078000");
+        //설정된 최저임금이 디폴트값보다 작으면 디폴트값 아니면 설정값
+        if(getMINUMUMWAGE()<=Double.parseDouble(getString(R.string.minimumage)))
+            ((EditText) layout.findViewById(R.id.minimumwage)).setText(R.string.minimumage);
+        else ((EditText) layout.findViewById(R.id.minimumwage)).setText(String.format("%.0f",getMINUMUMWAGE()));
+
+        //설정된 부담기초액이 디폴트값보다 작으면 디폴트값 아니면 설정값
+        if(getBASISAMOUNT()<=Double.parseDouble(getString(R.string.basisamount)))
+            ((EditText) layout.findViewById(R.id.basisamount)).setText(R.string.basisamount);
+        else ((EditText) layout.findViewById(R.id.basisamount)).setText(String.format("%.0f",getBASISAMOUNT()));
 ////////////////////////////////////////////////////////////////////////
 
         aDialog.setPositiveButton("저장", new DialogInterface.OnClickListener() {
@@ -378,9 +385,15 @@ public class ChargeActivity extends AppCompatActivity {
                 double tmpDblBasis = Double.parseDouble(tmpBasis);
                 setMINUMUMWAGE(tmpDblMin);
                 setBASISAMOUNT(tmpDblBasis);
+                if(tmpDblMin < Double.parseDouble(getString(R.string.minimumage)))
+                    Toast.makeText(getApplicationContext(), "최저임금이 적게 설정되어 있음. 설정버튼을 누르세요.", Toast.LENGTH_LONG).show();
+                if(tmpDblBasis < Double.parseDouble(getString(R.string.basisamount)))
+                    Toast.makeText(getApplicationContext(), "부담기초액이 적게 설정되어 있음. 설정버튼을 누르세요.", Toast.LENGTH_LONG).show();
             } else {
                 setMINUMUMWAGE(0);  // 2017년 기준  최저임금 1352230
                 setBASISAMOUNT(0);   // 2017년 기준  기초액 812000
+                onClickConfig(findViewById(R.id.btn_config));
+                Toast.makeText(getApplicationContext(), "설정 파일 오류 발생.", Toast.LENGTH_LONG).show();
             }
             br.close();
         } catch (FileNotFoundException e) {
@@ -389,6 +402,8 @@ public class ChargeActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "설정 파일이 존재 하지 않습니다.", Toast.LENGTH_LONG).show();
         } catch (IOException e) {
             e.printStackTrace();
+            onClickConfig(findViewById(R.id.btn_config));
+            Toast.makeText(getApplicationContext(), "설정 파일이 입출력예외 에러.", Toast.LENGTH_LONG).show();
         }
         //return readStr.toString();
     }
@@ -397,6 +412,7 @@ public class ChargeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_charge);
         setContentView(R.layout.activity_charge_msg);
 
 
@@ -431,8 +447,8 @@ public class ChargeActivity extends AppCompatActivity {
         getConfig();  // 설정파일 불러오기
 
         edit1 = findViewById(R.id.etR1C1);  // 상시인원
-        edit2 = findViewById(R.id.etR1C5);  // 경증
-        edit3 = findViewById(R.id.etR1C6);  // 중증
+        edit2 = findViewById(R.id.etR1C5);  // 경증인원
+        edit3 = findViewById(R.id.etR1C6);  // 중증인원
 
         editb1 = findViewById(R.id.etR2C1);
         editb2 = findViewById(R.id.etR2C5);
